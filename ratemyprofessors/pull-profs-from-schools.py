@@ -19,7 +19,7 @@ for school in school_list:
         results_filename = "data/professors/%s-page%03d.json" % (school_file, page)
         with open(results_filename, "w") as results_file:
             results_file.write(results)
-            print "Wrote page %d" % page
+            print "wrote page %d" % page
         results = json.loads(results)
         remaining = int(results["remaining"])
         if remaining == 0: break

@@ -8,14 +8,10 @@ school_list = None
 with open(TOP_COLLEGES) as top_colleges:
     school_list = [line.strip() for line in top_colleges.readlines()]
 
-ut_austin = school_list.index("University of Texas")
 for school in school_list[ut_austin:]:
     school_url = school.replace(" ", "+")
     school_file = school.replace(" ", "-").replace("(", "-").replace(")", "-")
-    if school == "University of Texas":
-        page = 552
-    else:    
-        page = 1
+    page = 1
     while True:
         query = SCHOOL_QUERY_URL % (school_url, page)
         results = urllib2.urlopen(query).read()

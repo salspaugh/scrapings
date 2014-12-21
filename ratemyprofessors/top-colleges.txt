@@ -1,0 +1,100 @@
+Williams College
+Stanford University
+Swarthmore College
+Princeton University
+Massachusetts Institute of Technology
+Yale University
+Harvard University
+Pomona College
+United States Military Academy
+Amherst College
+Haverford College
+University of Pennsylvania
+Brown University
+Bowdoin College
+Wesleyan University
+Carleton College
+University of Notre Dame
+Dartmouth College
+Northwestern University
+Columbia University
+California Institute of Technology
+Davidson College
+Duke University
+University of Chicago
+Tufts University
+Vassar College
+United States Naval Academy
+Georgetown University
+Wellesley College
+Middlebury College
+Cornell University
+Rice University
+Washington and Lee University
+United States Air Force Academy
+Barnard College
+Boston College
+University of California Berkeley
+Colgate University
+Colby College
+University of Virginia
+College of William and Mary
+Kenyon College
+Oberlin College
+University of California Los Angeles (UCLA)
+University of Michigan
+Reed College
+Whitman College
+Lafayette College
+Smith College
+University of North Carolina
+Colorado College
+Harvey Mudd College
+College of the Holy Cross
+Vanderbilt University
+Hamilton College
+Franklin and Marshall College
+Union College
+Grinnell College
+Carnegie Mellon University
+Bates College
+Wake Forest University
+University of Rochester
+Washington University in Saint Louis
+Cooper Union
+Bryn Mawr College
+Macalester College
+Johns Hopkins University
+University of Illinois at Urbana-Champaign
+Scripps College
+University of Wisconsin - Madison
+Villanova University
+New York University
+University of Washington
+Brandeis University
+Wheaton College
+University of Texas
+Lehigh University
+University of Southern California
+Brigham Young University
+Occidental College
+Centre College
+University of Maryland
+Trinity College
+Connecticut College
+Wofford College
+Santa Clara University
+University of Florida
+Dickinson College
+Boston University
+Georgia Institute of Technology
+DePauw University
+Earlham College
+Rhodes College
+University of Georgia
+Denison University
+University of Richmond
+Mount Holyoke College
+University of the South
+Sarah Lawrence College
+Furman University

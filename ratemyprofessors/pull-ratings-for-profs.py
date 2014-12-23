@@ -38,6 +38,8 @@ def fetch_ratings(tid):
 
 processed_file = open("processed-prof-lists.txt", "r")
 processed = [f.strip() for f in processed_file.readlines()]
+processed_file.close()
+
 processed_file = open("processed-prof-lists.txt", "a")
 nprofs = 0
 schools_seen = set()
@@ -56,7 +58,7 @@ for fsitem in os.listdir(PROFESSOR_LISTS):
             if institution in school_list and nratings > RATINGS_THRESH:
                 schools_seen.add(institution)
                 nprofs += 1
-            fetch_ratings(tid)
+                fetch_ratings(tid)
         nfiles += 1
         processed_file.write(fsitem)
         processed_file.write("\n")

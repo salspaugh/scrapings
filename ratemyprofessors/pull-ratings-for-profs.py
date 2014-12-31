@@ -47,7 +47,7 @@ nfiles = len(processed)
 for fsitem in os.listdir(PROFESSOR_LISTS):
     fsitem = os.path.join(PROFESSOR_LISTS, fsitem)
     if not os.path.isfile(fsitem): continue
-    #if fsitem in processed: continue
+    if fsitem in processed: continue
     with open(fsitem) as prof_list_file:
         data = json.load(prof_list_file)
         for prof in data["professors"]:
@@ -60,6 +60,7 @@ for fsitem in os.listdir(PROFESSOR_LISTS):
                 nprofs += 1
                 fetch_ratings(tid)
         nfiles += 1
+        processed.append(fsitem)
         processed_file.write(fsitem)
         processed_file.write("\n")
         processed_file.flush()

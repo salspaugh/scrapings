@@ -1,0 +1,52 @@
+,Accidental Shooting,Accidental Shooting - Injury,Accidental/Negligent Discharge,Bar/club incident - in or around establishment,Cleaning gun,Defensive Use,"Defensive Use - Crime occurs, victim shoots perpetrator",Defensive Use - Stand Your Ground/Castle Doctrine established,Defensive Use - Victim stops crime,Defensive Use - WITHOUT a gun,Domestic Violence,"Drive-by (car to street, car to car)",Drug involvement,Home Invasion,Home Invasion - No death or injury,Home Invasion - Perpetrator injured,"IDIOCY, NOT AGGRESSION",Possession (gun(s) found during commission of other crimes),Self-Inflicted (not suicide or suicide attempt - NO PERP),"Shot - Dead (murder, accidental, suicide)",Shot - Wounded/Injured,Shots Fired - No Injuries,address,city_or_county,id,incident_date,latitude,location_description,longitude,num_injured,num_killed,state
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,Crosby Avenue and Miller Place,Brooklyn,0,"January 11, 2016",N/A,"Crosby Avenue and Miller Place
+Brooklyn, New York",N/A,1,0,New York
+1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,127 Evergreen Street,Rochester,1,"January 11, 2016",N/A,"127 Evergreen Street
+Rochester, New York",N/A,1,0,New York
+2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,11D Rebecca Drive,Duncannon,2,"January 11, 2016",40.3982,"11D Rebecca Drive
+Duncannon, Pennsylvania",-77.0341,1,1,Pennsylvania
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,Interstate 8,La Mesa,3,"January 11, 2016",32.7734,"Interstate 8
+La Mesa, California",-117.016,2,0,California
+4,0,0,0,0,0,1,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,1,800 Block of North Dorgenois Street,New Orleans,4,"January 11, 2016",29.9704,"800 Block of North Dorgenois Street
+New Orleans, Louisiana",-90.0809,0,0,Louisiana
+5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,4200 Block of Tate Street,Shreveport,5,"January 11, 2016",32.4602,"4200 Block of Tate Street
+Shreveport, Louisiana",-93.8058,1,0,Louisiana
+6,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,Windridge Drive and Spooner Drive,Carson City,6,"January 11, 2016",39.1815,"Windridge Drive and Spooner Drive
+Carson City, Nevada",-119.747,0,1,Nevada
+7,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,Weehawkin Place and Dhalgren Drive,Akron,7,"January 11, 2016",41.0343,"Weehawkin Place and Dhalgren Drive
+Akron, Ohio",-81.4891,0,0,Ohio
+8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,Hargrove Road and 11th Avenue,Tuscaloosa,8,"January 11, 2016",33.1935,"Hargrove Road and 11th Avenue
+Tuscaloosa, Alabama",-87.5526,0,1,Alabama
+9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,8600 Block of Coy Avenue,Baton Rouge,9,"January 11, 2016",30.3586,"8600 Block of Coy Avenue
+Baton Rouge, Louisiana",-91.1235,1,1,Louisiana
+10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,N/A,New Orleans,10,"January 11, 2016",29.9551,"
+New Orleans, Louisiana",-90.0747,1,0,Louisiana
+11,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,200 block of Guthrie Drive,Bardstown,11,"January 11, 2016",37.8088,"200 block of Guthrie Drive
+Bardstown, Kentucky",-85.4528,1,0,Kentucky
+12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,2500 block of North Laramie,Chicago,12,"January 11, 2016",41.9261,"2500 block of North Laramie
+Chicago, Illinois",-87.7567,1,0,Illinois
+13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,Forest Avenue,Pittsburgh,13,"January 10, 2016",40.3294,"Forest Avenue
+Pittsburgh, Pennsylvania",-79.9902,0,1,Pennsylvania
+14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,2200 block of Disston Street,Philadelphia,14,"January 10, 2016",40.0409,"2200 block of Disston Street
+Philadelphia, Pennsylvania",-75.0618,1,0,Pennsylvania
+15,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,Interstate 394 and Dunwoody Boulevard,Minneapolis,15,"January 10, 2016",44.9721,"Interstate 394 and Dunwoody Boulevard
+Minneapolis, Minnesota",-93.2905,2,0,Minnesota
+16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,120 South Chester street,Monticello,16,"January 10, 2016",33.6262,"120 South Chester street
+Monticello, Arkansas",-91.793,1,2,Arkansas
+17,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,0,1,0,Wolverton Circle,Lithonia,17,"January 10, 2016",33.6701,"Wolverton Circle
+Lithonia, Georgia",-84.1906,1,0,Georgia
+18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,3200 block of Park Drive SE,Washington,18,"January 10, 2016",38.8656,"3200 block of Park Drive SE
+Washington, District of Columbia",-76.9611,1,0,District of Columbia
+19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,Quillins Chapel Road,Campton,19,"January 10, 2016",37.7343,"Quillins Chapel Road
+Campton, Kentucky",-83.5474,2,0,Kentucky
+20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,5770 Scott-White Road,Hollywood,20,"January 10, 2016",32.834,"5770 Scott-White Road
+Hollywood, South Carolina",-79.8225,1,1,South Carolina
+21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,539 Macon Street,Brooklyn,21,"January 10, 2016",40.6836,"539 Macon Street
+Brooklyn, New York",-73.9301,2,1,New York
+22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,Oliver Street and Cactus Avenue,Moreno Valley,22,"January 10, 2016",33.9101,"Oliver Street and Cactus Avenue
+Moreno Valley, California",-117.183,0,1,California
+23,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,153 Harry L Drive,Johnson City,23,"January 10, 2016",42.1224,"Oasis
+153 Harry L Drive
+Johnson City, New York",-75.9531,1,0,New York
+24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,200 block of Pershing Avenue,Portsmouth,24,"January 10, 2016",38.7721,"200 block of Pershing Avenue
+Portsmouth, Ohio",-82.8702,2,0,Ohio

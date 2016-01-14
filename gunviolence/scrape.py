@@ -12,8 +12,8 @@ TABLE_COLUMNS = [
     "State",
     "City or County",
     "Address",
-    "Num_killed",
-    "Num_injured",
+    "Number Killed",
+    "Number Injured",
     "Operations",
 ]
 
@@ -22,19 +22,24 @@ DETAIL_COLUMNS = [
     "Location Description",
     "Latitude",
     "Longitude",
-    "Characteristics"
+    "Characteristics",
+    "Notes",
+    "Congressional District",
+    "State Senate District",
+    "State House District"
 ]
 
 incidents = { c: [] for c in TABLE_COLUMNS + DETAIL_COLUMNS }
 
 participants = {
-    "Incident": [],
+    "Incident ID": [],
     "Type": [],
     "Name": [],
     "Age": [],
     "Age Group": [],
     "Gender": [],
-    "Status": []
+    "Status": [],
+    "Relationship": []
 }
 
 def scrape():
@@ -47,11 +52,14 @@ def scrape():
     characteristics_to_binary(incidents)
     del incidents["Characteristics"]
     del incidents["Operations"]
+    #for (attr, vals) in participants.iteritems():
+    #    print attr, len(vals)
     incidents_df = pandas.DataFrame(incidents) 
     incidents_df = incidents_df.drop_duplicates()
     participants_df = pandas.DataFrame(participants)
-    incidents_df.to_csv("incidents.csv")  
-    participants_df.to_csv("participants.csv")
+
+    incidents_df.to_csv("incidents.csv", index=False, na_rep="N/A", encoding='utf-8') 
+    participants_df.to_csv("participants.csv", index=False, na_rep="N/A", encoding='utf-8')
 
 def characteristics_to_binary(incidents):
     characteristics = set()
@@ -63,9 +71,9 @@ def characteristics_to_binary(incidents):
         ones = set(c)
         zeros = characteristics.difference(ones)
         for one in ones:
-            incidents[one].append(1)
+            incidents[one].append(True)
         for zero in zeros:
-            incidents[zero].append(0)
+            incidents[zero].append(False)
 
 def scrape_page(url, incident_id):
     r = requests.get(url)
@@ -86,14 +94,15 @@ def scrape_location(div):
     lat = "N/A"
     long = "N/A"
     for child in div.find_all("span"):
+        text = child.text
         if child.text.find("Geolocation") == -1:
-            location_description.append(child.text)
+            location_description.append(text)
         else:
-            geolocation = child.text
+            geolocation = text
             coords = geolocation.split(":")[1].strip().split(",")
             lat = float(coords[0].strip())
             long = float(coords[1].strip())
-    desc = "\n".join(location_description)
+    desc = "; ".join(location_description)
     incidents["Location Description"].append(desc)
     incidents["Latitude"].append(lat)
     incidents["Longitude"].append(long)
@@ -101,15 +110,30 @@ def scrape_location(div):
 def scrape_participants(div, incident_id):
     participant = {}
     for child in div.find_all("li"):
-        if child.text == "Victim" or child.text == "Perpetrator":
-            for (attr, val) in participant.iteritems():
-                participants[attr].append(val)
-                participants["Incident"] = incident_id
-            participant = {}
+
         pair = child.text.split(":")
-        attr = pair[0].strip().lower().replace(" ", "_")
+        attr = pair[0].strip()
         val = pair[1].strip()
+
+        if attr == "Type" and len(participant) > 0:
+            participant["Incident ID"] = incident_id # set incident ID
+            for (k, v) in participant.iteritems(): # add participant data to list
+                participants[k].append(v)
+            for k in participants.keys(): # add null columns
+                if k not in participant.keys():
+                    participants[k].append("")
+            participant = {} # reset
         participant[attr] = val
+
+    # add last in list in div
+    if len(participant) > 0:
+        participant["Incident ID"] = incident_id
+        for (k, v) in participant.iteritems():
+            participants[k].append(v)
+        for k in participants.keys():
+            if k not in participant.keys():
+                participants[k].append("")
+
 
 def scrape_characteristics(div):
     characteristics = []
@@ -118,10 +142,23 @@ def scrape_characteristics(div):
     incidents["Characteristics"].append(characteristics)
 
 def scrape_notes(div):
-    print div.text 
+    text = []
+    for child in div.find_all("p"):
+        text.append(child.text)
+    incidents["Notes"].append("; ".join(text))
 
 def scrape_district(div):
-    pass
+    for line in div.text.split("\n"):
+        if line.find(":") > -1:
+            attr, val = line.split(":")
+            attr = attr.strip()
+            val = val.strip()
+            if len(val) > 0:
+                val = int(val)
+            else:
+                val = "N/A"
+            incidents[attr].append(val)
+
 
 def scrape_details(url, incident_id):
     r = requests.get(url)
@@ -137,8 +174,17 @@ def scrape_details(url, incident_id):
                 scrape_characteristics(div)
             if h2.text == "Notes":
                 scrape_notes(div)
-            #if h2.text == "District":
-            #    scrape_district(div)
+            if h2.text == "District":
+                scrape_district(div)
+    all_text = main.text
+    if all_text.find("Notes") == -1:
+        incidents["Notes"].append("")
+    if all_text.find("Incident Characteristics") == -1:
+        incidents["Characteristics"].append("")
+    if all_text.find("Congressional District") == -1:
+        incidents["Congressional District"].append("")
+        incidents["State Senate District"].append("")
+        incidents["State House District"].append("")
 
 if __name__ == "__main__":
     scrape()

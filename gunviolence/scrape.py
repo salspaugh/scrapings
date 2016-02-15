@@ -1,4 +1,3 @@
-#import argparse
 import bs4
 import requests
 import pandas
@@ -45,10 +44,10 @@ participants = {
 def scrape():
     incident_id = 0
     url = URL_72_HRS
-    scrape_page(URL_72_HRS, incident_id)
+    incident_id = scrape_page(URL_72_HRS, incident_id)
     for p in range(1, 9):
         url = URL_72_HRS + "?page=%s" % p
-        scrape_page(url, incident_id)
+        incident_id = scrape_page(url, incident_id)
     characteristics_to_binary(incidents)
     del incidents["Characteristics"]
     del incidents["Operations"]
@@ -60,20 +59,6 @@ def scrape():
 
     incidents_df.to_csv("incidents.csv", index=False, na_rep="N/A", encoding='utf-8') 
     participants_df.to_csv("participants.csv", index=False, na_rep="N/A", encoding='utf-8')
-
-def characteristics_to_binary(incidents):
-    characteristics = set()
-    for c in incidents["Characteristics"]:
-        characteristics.update(c)
-    for c in characteristics:
-        incidents[c] = []
-    for c in incidents["Characteristics"]:
-        ones = set(c)
-        zeros = characteristics.difference(ones)
-        for one in ones:
-            incidents[one].append(True)
-        for zero in zeros:
-            incidents[zero].append(False)
 
 def scrape_page(url, incident_id):
     r = requests.get(url)
@@ -88,6 +73,21 @@ def scrape_page(url, incident_id):
             incident_id += 1
         for c, e in zip(TABLE_COLUMNS, entries):
             incidents[c].append(e.text)
+    return incident_id
+
+def characteristics_to_binary(incidents):
+    characteristics = set()
+    for c in incidents["Characteristics"]:
+        characteristics.update(c)
+    for c in characteristics:
+        incidents[c] = []
+    for c in incidents["Characteristics"]:
+        ones = set(c)
+        zeros = characteristics.difference(ones)
+        for one in ones:
+            incidents[one].append(True)
+        for zero in zeros:
+            incidents[zero].append(False)
 
 def scrape_location(div):
     location_description = []
